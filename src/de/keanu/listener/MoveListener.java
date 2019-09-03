@@ -21,17 +21,18 @@ public class MoveListener implements Listener {
                     plys.setGameMode(GameMode.SPECTATOR);
                     plys.sendMessage("§e" + p.getDisplayName() + "§7 ist gesprungen!");
                 }
-                Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit:§e" + Variables.elapsedTime);
+                Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit: §e" + (Variables.elapsedTime/1000)+"sec");
             }
         }
         if(Variables.noSneak) {
             if(p.isSneaking() && Variables.timerStarted) {
                 Variables.timerStarted = false;
+                Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
                 for(Player plys : Bukkit.getOnlinePlayers()) {
                     plys.setGameMode(GameMode.SPECTATOR);
                     plys.sendMessage("§e" + p.getDisplayName() + "§7 hat gesneakt!");
                 }
-                Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit:§e" + Variables.elapsedTime);
+                Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit: §e" + (Variables.elapsedTime/1000)+"sec");
             }
         }
     }

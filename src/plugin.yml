@@ -1,5 +1,5 @@
 name: ChallengePlugin
-version: 0.5
+version: 1.0
 description: Challenge Plugin inspired from Banko
 author: Keanu
 
@@ -7,7 +7,7 @@ main: de.keanu.main.Main
 
 commands:
   settings:
-    description: Set yourself on fire.
+    description: settings
     usage: /settings <setting>
   timer:
     description: timer

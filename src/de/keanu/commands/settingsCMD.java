@@ -13,8 +13,8 @@ public class settingsCMD implements CommandExecutor {
         Player p = (Player) sender;
         String setting = args[0];
 
-        if(p.hasPermission("challenge.settings")) {
-            if(args.length == 1) {
+        if(args.length == 1) {
+            if(p.hasPermission("challenge.settings")) {
                 switch (setting) {
                     case "noDamage": {
                         if (Variables.noDamage) {
