@@ -3,6 +3,7 @@ package de.keanu.main;
 import de.keanu.commands.settingsCMD;
 import de.keanu.commands.timerCMD;
 import de.keanu.listener.DamageListener;
+import de.keanu.listener.DeadListener;
 import de.keanu.listener.JoinListener;
 import de.keanu.listener.MoveListener;
 import org.bukkit.Bukkit;
@@ -19,6 +20,8 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new JoinListener(),this);
         Bukkit.getPluginManager().registerEvents(new DamageListener(),this);
         Bukkit.getPluginManager().registerEvents(new MoveListener(),this);
+        Bukkit.getPluginManager().registerEvents(new DeadListener(), this);
+
         System.out.println("[Challenge-Plugin] started.");
     }
 }
