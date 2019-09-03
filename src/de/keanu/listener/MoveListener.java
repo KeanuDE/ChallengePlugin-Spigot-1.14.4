@@ -14,19 +14,24 @@ public class MoveListener implements Listener {
         Player p = e.getPlayer();
 
         if(Variables.noJump) {
-            if(p.getVelocity().getY() >= 0 && !p.isOnGround()) {
+            if(p.getVelocity().getY() >= 0 && !p.isOnGround() && Variables.timerStarted) {
+                Variables.timerStarted = false;
+                Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
                 for(Player plys : Bukkit.getOnlinePlayers()) {
                     plys.setGameMode(GameMode.SPECTATOR);
                     plys.sendMessage("§e" + p.getDisplayName() + "§7 ist gesprungen!");
                 }
+                Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit:§e" + Variables.elapsedTime);
             }
         }
         if(Variables.noSneak) {
-            if(p.isSneaking()) {
+            if(p.isSneaking() && Variables.timerStarted) {
+                Variables.timerStarted = false;
                 for(Player plys : Bukkit.getOnlinePlayers()) {
                     plys.setGameMode(GameMode.SPECTATOR);
                     plys.sendMessage("§e" + p.getDisplayName() + "§7 hat gesneakt!");
                 }
+                Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit:§e" + Variables.elapsedTime);
             }
         }
     }
