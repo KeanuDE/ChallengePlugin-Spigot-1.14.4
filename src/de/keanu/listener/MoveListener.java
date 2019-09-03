@@ -29,6 +29,7 @@ public class MoveListener implements Listener {
                 Variables.timerStarted = false;
                 Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
                 for(Player plys : Bukkit.getOnlinePlayers()) {
+                    plys.getInventory().clear();
                     plys.setGameMode(GameMode.SPECTATOR);
                     plys.sendMessage("§e" + p.getDisplayName() + "§7 hat gesneakt!");
                 }

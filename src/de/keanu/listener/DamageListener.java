@@ -20,10 +20,19 @@ public class DamageListener implements Listener {
                 Variables.timerStarted = false;
                 Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
                 for(Player plys : Bukkit.getOnlinePlayers() ) {
+                    plys.getInventory().clear();
                     plys.setGameMode(GameMode.SPECTATOR);
                     plys.sendMessage("§e" + p.getDisplayName() + "§7 hat Schaden bekommen!");
                 }
                 Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit: §e" + (Variables.elapsedTime/1000)+"sec");
+            }
+            if(Variables.sharedHearts && Variables.timerStarted) {
+                for(Player plys : Bukkit.getOnlinePlayers() ) {
+                    plys.getInventory().clear();
+                    plys.setHealth(p.getHealth());
+                    Variables.sharedHP = p.getHealth();
+                    plys.sendMessage("§e" + p.getDisplayName() + "§7 hat Schaden bekommen!");
+                }
             }
         }
     }
