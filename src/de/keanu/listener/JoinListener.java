@@ -12,8 +12,13 @@ public class JoinListener implements Listener {
         Player p = e.getPlayer();
 
         e.setJoinMessage("§e" + p.getDisplayName() + " ist dem Challenge-Server beigetreten!");
-        if(Variables.sharedHearts && Variables.timerStarted) {
-            p.setHealth(Variables.sharedHP);
+        if(Variables.timerStarted) {
+            Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
+            p.sendMessage("§eTimer: §7" + (Variables.elapsedTime/1000) +"sec");
+            if(Variables.sharedHearts) {
+                p.setHealth(Variables.sharedHP);
+            }
+
         }
     }
 }
