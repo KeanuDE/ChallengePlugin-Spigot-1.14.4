@@ -17,10 +17,10 @@ Challenge Plugin für Minecraft 1.14.4
   Beschreibung: stellt den Challenge Timer an / aus<br />
   
   verfügbare Kommandos<br />
-    start: startet den Timer<br />
-    stop: stoppt den Timer<br />
-    reset: startet den Timer neu<br />
-    time: zeigt wie lange der Timer schon läuft
+    **start**: startet den Timer<br />
+    **stop**: stoppt den Timer<br />
+    **reset**: startet den Timer neu<br />
+    **time**: zeigt wie lange der Timer schon läuft
     
 ## Permissions
 #### challenge.time
