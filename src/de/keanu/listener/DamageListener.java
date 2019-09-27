@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityRegainHealthEvent;
 
 public class DamageListener implements Listener {
     @EventHandler
@@ -28,10 +29,22 @@ public class DamageListener implements Listener {
             }
             if(Variables.sharedHearts && Variables.timerStarted) {
                 for(Player plys : Bukkit.getOnlinePlayers() ) {
-                    plys.getInventory().clear();
                     plys.setHealth(p.getHealth());
                     Variables.sharedHP = p.getHealth();
                     plys.sendMessage("§e" + p.getDisplayName() + "§7 hat Schaden bekommen!");
+                }
+            }
+        }
+    }
+    @EventHandler
+    public void onGeneration(EntityRegainHealthEvent e) {
+        Entity ent = e.getEntity();
+        Player p = (Player) e;
+        if(ent instanceof Player) {
+            if(Variables.sharedHearts && Variables.timerStarted) {
+                for(Player plys : Bukkit.getOnlinePlayers() ) {
+                    plys.setHealth(p.getHealth());
+                    Variables.sharedHP = p.getHealth();
                 }
             }
         }
