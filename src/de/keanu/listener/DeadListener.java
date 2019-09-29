@@ -24,12 +24,9 @@ public class DeadListener implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent e) {
         Player p = e.getEntity();
-        p.setGameMode(GameMode.SPECTATOR);
-        if(Main.deathPlayer.size() == Bukkit.getServer().getOnlinePlayers().size()) {
-            Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit: §e" + (Variables.elapsedTime/1000)+"sec");
-        } else {
-            Bukkit.broadcastMessage("§7Der Spieler §e" + p.getDisplayName() + "§7 ist augeschieden!");
-            Main.deathPlayer.add(p);
+        Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit: §e" + (Variables.elapsedTime/1000)+"sec");
+        for(Player plys : Bukkit.getOnlinePlayers() ) {
+            plys.setGameMode(GameMode.SPECTATOR);
         }
     }
 }

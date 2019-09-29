@@ -28,23 +28,12 @@ public class DamageListener implements Listener {
                 Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit: §e" + (Variables.elapsedTime/1000)+"sec");
             }
             if(Variables.sharedHearts && Variables.timerStarted) {
+                Bukkit.broadcastMessage("§e"+p.getDisplayName()+"§7 hat Schaden bekommen! (§e"+e.getDamage()+"§7 : §e"+e.getCause().name()+")");
                 for(Player plys : Bukkit.getOnlinePlayers() ) {
-                    plys.setHealth(p.getHealth());
-                    Variables.sharedHP = p.getHealth();
-                    plys.sendMessage("§e" + p.getDisplayName() + "§7 hat Schaden bekommen!");
-                }
-            }
-        }
-    }
-    @EventHandler
-    public void onGeneration(EntityRegainHealthEvent e) {
-        Entity ent = e.getEntity();
-        Player p = (Player) e;
-        if(ent instanceof Player) {
-            if(Variables.sharedHearts && Variables.timerStarted) {
-                for(Player plys : Bukkit.getOnlinePlayers() ) {
-                    plys.setHealth(p.getHealth());
-                    Variables.sharedHP = p.getHealth();
+                    if(plys != p) {
+                        Variables.sharedHP = p.getHealth();
+                        plys.setHealth(p.getHealth());
+                    }
                 }
             }
         }

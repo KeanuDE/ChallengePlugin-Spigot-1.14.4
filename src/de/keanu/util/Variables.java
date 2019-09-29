@@ -5,6 +5,8 @@ public class Variables {
     public static boolean noJump = false;
     public static boolean noSneak = false;
     public static boolean sharedHearts = false;
+    public static boolean noRegeneration = false;
+
 
     public static long startTime = 0;
     public static long elapsedTime = 0;

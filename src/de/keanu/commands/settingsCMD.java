@@ -16,6 +16,16 @@ public class settingsCMD implements CommandExecutor {
         if(args.length == 1) {
             if(p.hasPermission("challenge.settings")) {
                 switch (setting) {
+                    case "noReg": {
+                        if (Variables.noRegeneration) {
+                            Variables.noRegeneration = false;
+                            Bukkit.broadcastMessage("§enoRegeneration§7: §coff");
+                        } else {
+                            Variables.noRegeneration = true;
+                            Bukkit.broadcastMessage("§enoRegeneration§7: §aon");
+                        }
+                        break;
+                    }
                     case "sharedHP": {
                         if (Variables.sharedHearts) {
                             Variables.sharedHearts = false;
@@ -57,7 +67,7 @@ public class settingsCMD implements CommandExecutor {
                         break;
                     }
                     default:
-                        p.sendMessage("§enoDamage§7,§enoJump§7,§enoSneak§7,§esharedHP");
+                        p.sendMessage("§enoDamage§7,§enoJump§7,§enoSneak§7,§esharedHP§7,§enoReg");
                 }
             } else {
                 p.sendMessage("§cDas kannst du nicht!");

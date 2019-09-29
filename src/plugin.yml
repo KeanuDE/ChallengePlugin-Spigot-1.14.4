@@ -1,5 +1,5 @@
 name: ChallengePlugin
-version: 1.6
+version: 1.9.1
 description: Challenge Plugin inspired from Banko
 author: Keanu
 
@@ -12,3 +12,6 @@ commands:
   timer:
     description: timer
     usage: /timer <setting>
+  warp:
+    description: warp
+    usage: /warp arg <name>

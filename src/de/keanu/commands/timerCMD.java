@@ -11,6 +11,7 @@ public class timerCMD implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         Player p =(Player) sender;
+        String msg = "§e" + p.getDisplayName() + "§7 hat den Timer gestartet!\n§cChallenges: §7";
         if(args.length == 1) {
             if(p.hasPermission("challenge.timer")) {
                 switch(args[0]) {
@@ -18,7 +19,22 @@ public class timerCMD implements CommandExecutor {
                         Variables.timerStarted = true;
                         Variables.startTime = System.currentTimeMillis();
                         p.sendMessage("§7Du hast den Timer gestartet.");
-                        Bukkit.broadcastMessage("§e" + p.getDisplayName() + "§7 hat den Timer gestartet!");
+                        if(Variables.noRegeneration) {
+                            msg = msg + "\nnoRegeneration";
+                        }
+                        if(Variables.sharedHearts) {
+                            msg = msg + "\nsharedHearts";
+                        }
+                        if(Variables.noSneak) {
+                            msg = msg + "\nnoSneak";
+                        }
+                        if(Variables.noJump) {
+                            msg = msg + "\nnoJump";
+                        }
+                        if(Variables.noDamage) {
+                            msg = msg + "\nnoDamage";
+                        }
+                        Bukkit.broadcastMessage(msg);
                         break;
                     }
                     case "reset": {
