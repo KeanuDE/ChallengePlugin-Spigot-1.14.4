@@ -27,7 +27,7 @@ Challenge Plugin für Minecraft 1.14.4
 Syntax: /warp <option> <name>
 
 Beschreibung: Erstellt einen Warp wo sich jeder hin teleportieren kann. <br />
-verfügbare Kommandos:
+verfügbare Kommandos: <br />
     **set**: erstellt einen Warp <br />
     **tp**: teleportiert dich zu einen Warp <br />    
     
