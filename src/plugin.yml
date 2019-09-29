@@ -15,3 +15,6 @@ commands:
   warp:
     description: warp
     usage: /warp arg <name>
+  backpack:
+    description: shared Inventory
+    usage: /backpack

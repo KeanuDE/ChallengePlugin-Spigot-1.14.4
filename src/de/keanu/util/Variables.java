@@ -1,5 +1,7 @@
 package de.keanu.util;
 
+import org.bukkit.entity.Player;
+
 public class Variables {
     public static boolean noDamage = false;
     public static boolean noJump = false;
@@ -13,5 +15,7 @@ public class Variables {
     public static boolean timerStarted = false;
 
     public static double sharedHP = 20;
+
+    public static Player firstPlayer = null;
 
 }

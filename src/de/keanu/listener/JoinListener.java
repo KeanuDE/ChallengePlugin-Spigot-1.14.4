@@ -11,6 +11,10 @@ public class JoinListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
 
+        if(Variables.firstPlayer == null) {
+            Variables.firstPlayer = p;
+        }
+
         e.setJoinMessage("§e" + p.getDisplayName() + " ist dem Challenge-Server beigetreten!");
         if(Variables.timerStarted) {
             Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);

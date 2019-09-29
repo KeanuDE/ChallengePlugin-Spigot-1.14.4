@@ -22,7 +22,14 @@ Challenge Plugin für Minecraft 1.14.4
     **stop**: stoppt den Timer<br />
     **reset**: startet den Timer neu<br />
     **time**: zeigt wie lange der Timer schon läuft
-    
+
+### warp<br />
+Syntax: /warp <option> <name>
+
+Beschreibung: Erstellt einen Warp wo sich jeder hin teleportieren kann. <br />
+verfügbare Kommandos:
+    **set**: erstellt einen Warp <br />
+    **tp**: teleportiert dich zu einen Warp <br />    
 ## Permissions
 #### challenge.time
 Zugriff auf den /time Befehl<br />

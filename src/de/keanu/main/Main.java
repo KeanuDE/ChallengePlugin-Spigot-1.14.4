@@ -1,5 +1,6 @@
 package de.keanu.main;
 
+import de.keanu.commands.backpackCMD;
 import de.keanu.commands.settingsCMD;
 import de.keanu.commands.timerCMD;
 import de.keanu.commands.warpCMD;
@@ -21,6 +22,7 @@ public class Main extends JavaPlugin {
         this.getCommand("settings").setExecutor(new settingsCMD());
         this.getCommand("timer").setExecutor(new timerCMD());
         this.getCommand("warp").setExecutor(new warpCMD());
+        this.getCommand("backpack").setExecutor(new backpackCMD());
 
         Bukkit.getPluginManager().registerEvents(new JoinListener(),this);
         Bukkit.getPluginManager().registerEvents(new DamageListener(),this);
