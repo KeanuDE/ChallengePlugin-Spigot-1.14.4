@@ -31,7 +31,7 @@ verfügbare Kommandos: <br />
     **set**: erstellt einen Warp <br />
     **tp**: teleportiert dich zu einen Warp <br />    
     
-###b ackpack<br />
+### backpack<br />
 Syntax: /backpack
 
 Beschreibung: Eine gemeinsame Enderchest für jeden Spieler
