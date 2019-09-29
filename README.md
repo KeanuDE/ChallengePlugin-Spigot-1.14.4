@@ -11,6 +11,7 @@ Challenge Plugin für Minecraft 1.14.4
     **noDamage**: Sobald einer Schaden bekommt ist die Challenge vorbei.<br />
     **noJump**: Sobald einer springt ist die Challenge vorbei.<br />
     **noSneak**: Sobald einer sneaked ist die Challenge vorbei.<br />
+    **noReg**: Keine normale Regeneration durch Saturation oder Essen<br />
   
 ### timer<br />
   Syntax: /timer <option><br />
