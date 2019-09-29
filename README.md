@@ -30,6 +30,11 @@ Beschreibung: Erstellt einen Warp wo sich jeder hin teleportieren kann. <br />
 verfügbare Kommandos:
     **set**: erstellt einen Warp <br />
     **tp**: teleportiert dich zu einen Warp <br />    
+    
+###backpack
+Syntax: /backpack
+
+Beschreibung: Eine gemeinsame Enderchest für jeden Spieler
 ## Permissions
 #### challenge.time
 Zugriff auf den /time Befehl<br />
