@@ -7,13 +7,15 @@ import de.keanu.commands.warpCMD;
 import de.keanu.listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main extends JavaPlugin {
+    public Main plugin;
+    public Main() {
+        this.plugin = plugin;
+    }
     public static HashMap<String, Location> warps = new HashMap<>();
     @Override
     public void onEnable() {

@@ -17,7 +17,7 @@ public class warpCMD implements CommandExecutor {
                 if(args[0].equalsIgnoreCase("set")) {
                     Main.warps.put(args[1],p.getLocation());
                     p.sendMessage("§aWarp-Punkt platziert!");
-                    Bukkit.broadcastMessage("§e" + p.getDisplayName() + "§7 hat den Warp-Punkt " + args[1] + " erstellt!");
+                    Bukkit.broadcastMessage("§e" + p.getDisplayName() + "§7 hat den Warp-Punkt §e" + args[1] + " erstellt!");
                 }
                 else if(args[0].equalsIgnoreCase("tp")) {
                     p.teleport(Main.warps.get(args[1]));
