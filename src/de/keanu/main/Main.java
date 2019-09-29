@@ -29,6 +29,7 @@ public class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new MoveListener(),this);
         Bukkit.getPluginManager().registerEvents(new DeadListener(), this);
         Bukkit.getPluginManager().registerEvents(new RegenerationListener(), this);
+        Bukkit.getPluginManager().registerEvents(new ServerListListener(),this);
 
         System.out.println("[Challenge-Plugin] started.");
     }
