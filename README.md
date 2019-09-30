@@ -35,8 +35,11 @@ verfügbare Kommandos: <br />
 Syntax: /backpack
 
 Beschreibung: Eine gemeinsame Enderchest für jeden Spieler
+### goal<br />
+Syntax /goal <wither/end>
+
+Beschreibung: Setzt das Ziel.
+
 ## Permissions
-#### challenge.time
-Zugriff auf den /time Befehl<br />
 #### challenge.settings
 Zugriff auf den /settings Befehl

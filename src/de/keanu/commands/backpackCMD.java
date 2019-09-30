@@ -13,7 +13,11 @@ public class backpackCMD implements CommandExecutor {
 
         if(sender instanceof Player) {
             if(args.length == 0) {
-                p.openInventory(Variables.firstPlayer.getEnderChest());
+                if(Variables.backpack) {
+                    p.openInventory(Variables.firstPlayer.getEnderChest());
+                } else {
+                    p.sendMessage("§cDas Backpack wurde nicht aktiviert!");
+                }
             } else {
                 p.sendMessage("§cEs ist nur §e/backpack§c!");
             }

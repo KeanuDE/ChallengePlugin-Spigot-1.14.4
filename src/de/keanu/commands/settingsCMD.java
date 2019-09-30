@@ -66,8 +66,18 @@ public class settingsCMD implements CommandExecutor {
                         }
                         break;
                     }
+                    case "backpack": {
+                        if (Variables.backpack) {
+                            Variables.backpack = false;
+                            Bukkit.broadcastMessage("§eBackpack§7: §coff");
+                        } else {
+                            Variables.backpack = true;
+                            Bukkit.broadcastMessage("§eBackpack§7: §aon");
+                        }
+                        break;
+                    }
                     default:
-                        p.sendMessage("§enoDamage§7,§enoJump§7,§enoSneak§7,§esharedHP§7,§enoReg");
+                        p.sendMessage("§enoDamage§7,§enoJump§7,§enoSneak§7,§esharedHP§7,§enoReg§7,§eBackpack");
                 }
             } else {
                 p.sendMessage("§cDas kannst du nicht!");

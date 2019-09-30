@@ -13,57 +13,53 @@ public class timerCMD implements CommandExecutor {
         Player p =(Player) sender;
         String msg = "§e" + p.getDisplayName() + "§7 hat den Timer gestartet!\n§cChallenges: §7";
         if(args.length == 1) {
-            if(p.hasPermission("challenge.timer")) {
-                switch(args[0]) {
-                    case "start": {
-                        Variables.timerStarted = true;
-                        Variables.startTime = System.currentTimeMillis();
-                        p.sendMessage("§7Du hast den Timer gestartet.");
-                        if(Variables.noRegeneration) {
-                            msg = msg + "\nnoRegeneration";
-                        }
-                        if(Variables.sharedHearts) {
-                            msg = msg + "\nsharedHearts";
-                        }
-                        if(Variables.noSneak) {
-                            msg = msg + "\nnoSneak";
-                        }
-                        if(Variables.noJump) {
-                            msg = msg + "\nnoJump";
-                        }
-                        if(Variables.noDamage) {
-                            msg = msg + "\nnoDamage";
-                        }
-                        Bukkit.broadcastMessage(msg);
-                        break;
+            switch(args[0]) {
+                case "start": {
+                    Variables.startTime = System.currentTimeMillis();
+                    Variables.timerStarted = true;
+                    p.sendMessage("§7Du hast den Timer gestartet.");
+                    if(Variables.noRegeneration) {
+                        msg = msg + "\nnoRegeneration";
                     }
-                    case "reset": {
-                        Variables.timerStarted = true;
-                        Variables.startTime = System.currentTimeMillis();
-                        p.sendMessage("§7Du hast den Timer neugestartet.");
-                        Bukkit.broadcastMessage("§e" + p.getDisplayName() + "§7 hat den Timer neugestartet!");
-                        break;
+                    if(Variables.sharedHearts) {
+                        msg = msg + "\nsharedHearts";
                     }
-                    case "time": {
-                        System.out.println("Time");
-                        Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
-                        p.sendMessage("§eTimer: §7" + (Variables.elapsedTime/1000) +"sec");
-                        break;
+                    if(Variables.noSneak) {
+                        msg = msg + "\nnoSneak";
                     }
-                    case "stop": {
-                        System.out.println("Stop");
-                        Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
-                        Bukkit.broadcastMessage("§e" + p.getDisplayName() + "§7 hat den Timer gestoppt!");
-                        Bukkit.broadcastMessage("§7Endzeit: §e" + (Variables.elapsedTime/1000)+"sec");
-                        Variables.timerStarted = false;
-                        break;
+                    if(Variables.noJump) {
+                        msg = msg + "\nnoJump";
                     }
-                    default: {
-                        p.sendMessage("§estart,reset,time,stop");
+                    if(Variables.noDamage) {
+                        msg = msg + "\nnoDamage";
                     }
+                    Bukkit.broadcastMessage(msg);
+                    break;
                 }
-            } else {
-                p.sendMessage("§cDas kannst du nicht tun!");
+                case "reset": {
+                    Variables.timerStarted = true;
+                    Variables.startTime = System.currentTimeMillis();
+                    p.sendMessage("§7Du hast den Timer neugestartet.");
+                    Bukkit.broadcastMessage("§e" + p.getDisplayName() + "§7 hat den Timer neugestartet!");
+                    break;
+                }
+                case "time": {
+                    System.out.println("Time");
+                    Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
+                    p.sendMessage("§eTimer: §7" + (Variables.elapsedTime/1000) +"sec");
+                    break;
+                }
+                case "stop": {
+                    System.out.println("Stop");
+                    Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
+                    Bukkit.broadcastMessage("§e" + p.getDisplayName() + "§7 hat den Timer gestoppt!");
+                    Bukkit.broadcastMessage("§7Endzeit: §e" + (Variables.elapsedTime/1000)+"sec");
+                    Variables.timerStarted = false;
+                    break;
+                }
+                default: {
+                    p.sendMessage("§estart,reset,time,stop");
+                }
             }
         } else {
             p.sendMessage("§c/timer <setting>");

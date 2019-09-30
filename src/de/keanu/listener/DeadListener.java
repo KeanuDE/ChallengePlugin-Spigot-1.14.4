@@ -15,7 +15,12 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 public class DeadListener implements Listener {
     @EventHandler
     public void onDeath(EntityDeathEvent e) {
-        if(e.getEntityType() == EntityType.ENDER_DRAGON && Variables.timerStarted) {
+        if(e.getEntityType() == EntityType.ENDER_DRAGON && Variables.timerStarted && Variables.goal == "end") {
+            Variables.timerStarted = false;
+            Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
+            Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit: §e" + (Variables.elapsedTime/1000)+"sec");
+        }
+        if(e.getEntityType() == EntityType.WITHER && Variables.timerStarted && Variables.goal == "wither") {
             Variables.timerStarted = false;
             Variables.elapsedTime = (System.currentTimeMillis() - Variables.startTime);
             Bukkit.broadcastMessage("§eChallenge ist vorbei!\n§7Endzeit: §e" + (Variables.elapsedTime/1000)+"sec");
